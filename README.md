@@ -1,73 +1,148 @@
-# Welcome to your Lovable project
+# MYL Web v1.1
 
-## Project info
+A modern web application built with React, TypeScript, and Vite, featuring a comprehensive UI component library and email integration.
 
-**URL**: https://lovable.dev/projects/5da18e39-9881-4045-bd90-876b416d70b8
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Stack**: React 18 + TypeScript + Vite
+- **UI Components**: Radix UI primitives with shadcn/ui
+- **Styling**: Tailwind CSS with custom animations
+- **Email Integration**: EmailJS for contact forms
+- **Form Handling**: React Hook Form with Zod validation
+- **Routing**: React Router DOM
+- **Charts**: Recharts for data visualization
+- **Theme Support**: Dark/Light mode with next-themes
 
-There are several ways of editing your application.
+## 📦 Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Library**: Radix UI + shadcn/ui
+- **Forms**: React Hook Form + Zod
+- **Email**: EmailJS
+- **Icons**: Lucide React
+- **Charts**: Recharts
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5da18e39-9881-4045-bd90-876b416d70b8) and start prompting.
+## 🛠️ Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd MYL_WEB_v1.1/MYL-Web
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📜 Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔧 Configuration
 
-## What technologies are used for this project?
+### Email Setup
+Configure EmailJS for contact forms by following the setup guide in `EMAILJS_SETUP.md`.
 
-This project is built with:
+### Environment Variables
+Create a `.env` file in the root directory with your configuration:
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📁 Project Structure
 
-## How can I deploy this project?
+```
+MYL-Web/
+├── public/              # Static assets
+│   ├── lovable-uploads/ # Uploaded images
+│   ├── favicon.ico      # Site favicon
+│   ├── myl-logo.svg     # Company logo
+│   └── robots.txt       # SEO robots file
+├── src/                 # Source code
+│   ├── assets/          # Course images and static assets
+│   ├── components/      # Reusable components
+│   │   ├── layout/      # Layout components
+│   │   └── ui/          # UI components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions and database
+│   ├── pages/           # Page components
+│   │   ├── About.tsx    # About page
+│   │   ├── Contact.tsx  # Contact page
+│   │   ├── Courses.tsx  # Courses listing
+│   │   └── ...
+│   ├── App.tsx          # Main app component
+│   └── main.tsx         # App entry point
+├── components.json      # shadcn/ui configuration
+├── tailwind.config.ts   # Tailwind configuration
+├── vite.config.ts       # Vite configuration
+└── package.json         # Dependencies and scripts
+```
 
-Simply open [Lovable](https://lovable.dev/projects/5da18e39-9881-4045-bd90-876b416d70b8) and click on Share -> Publish.
+## 🎨 UI Components
 
-## Can I connect a custom domain to my Lovable project?
+This project uses shadcn/ui components built on top of Radix UI primitives. Available components include:
 
-Yes, you can!
+- Accordion, Alert Dialog, Avatar
+- Button, Card, Checkbox
+- Dialog, Dropdown Menu, Form
+- Navigation Menu, Popover, Select
+- Tabs, Toast, Tooltip
+- And many more...
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📧 Email Integration
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+The project includes EmailJS integration for contact forms. See `EMAIL_TROUBLESHOOTING.md` for common issues and solutions.
+
+## 📚 Course Content
+
+The application features course pages for:
+- AWS Cloud Computing
+- Python Programming
+- Linux Administration
+- Ansible Automation
+- Google Cloud Platform
+
+## 🚀 Deployment
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your hosting provider.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 🆘 Troubleshooting
+
+- **Port 8080 in use**: Change the port in `vite.config.ts` or kill the process using port 8080
+- **Email not working**: Check `EMAIL_TROUBLESHOOTING.md` for common solutions
+- **Build issues**: Ensure all dependencies are installed with `npm install`
+
+For more detailed troubleshooting, check the individual documentation files in the project root.

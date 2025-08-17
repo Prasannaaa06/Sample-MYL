@@ -23,21 +23,24 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <img 
-              src="/lovable-uploads/6ed9742b-22b8-4549-b904-b2885769067e.png" 
-              alt="MYL Academy Logo" 
-              className="h-10 w-10 transition-transform group-hover:scale-110"
-            />
-            <span className="text-xl font-bold text-foreground">MYL ACADEMY</span>
+            <div className="flex space-x-1">
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-blue-600 rounded-sm transform group-hover:rotate-12 transition-transform duration-300"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-yellow-400 rounded-sm transform group-hover:-rotate-12 transition-transform duration-300"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-green-500 rounded-sm transform group-hover:rotate-12 transition-transform duration-300"></div>
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-purple-600 rounded-sm transform group-hover:-rotate-12 transition-transform duration-300"></div>
+            </div>
+            <span className="font-inter text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+              MYL ACADEMY
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Centered Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`text-sm font-medium transition-colors hover:text-primary font-inter ${
                   isActive(item.path) ? "text-primary" : "text-muted-foreground"
                 }`}
               >
@@ -45,6 +48,9 @@ const Header = () => {
               </Link>
             ))}
           </nav>
+
+          {/* Spacer for mobile */}
+          <div className="md:hidden"></div>
 
           {/* Mobile Menu Button */}
           <Button

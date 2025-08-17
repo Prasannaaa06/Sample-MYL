@@ -21,7 +21,7 @@ interface CourseCardProps {
 const CourseCard = ({ id, title, description, duration, students, rating }: CourseCardProps) => {
   const getImageForCourse = (courseId: string) => {
     switch (courseId) {
-      case "web-development":
+      case "Py":
         return pythonImage;
       case "data-science":
         return gcpImage;

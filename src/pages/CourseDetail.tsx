@@ -25,7 +25,7 @@ const coursesData: Record<string, Course> = {
     students: 99,
     rating: 4.8,
     level: "Beginner to Advance",
-    price: "₹8,000",
+    price: "₹4,999",
     /*mentor: {
       name: "",
       title: "",
@@ -74,7 +74,7 @@ const coursesData: Record<string, Course> = {
     students: 100,
     rating: 4.7,
     level: "Intermediate",
-    price: "₹8,000",
+    price: "₹6,999",
     /*mentor: {
       name: "Dr. Michael Chen",
       title: "Data Science Lead",
@@ -126,7 +126,7 @@ const coursesData: Record<string, Course> = {
     students: "80",
     rating: 4.6,
     level: "Beginner",
-    price: "₹8,000",
+    price: "₹7,999",
     /*mentor: {
       name: "Emily Rodriguez",
       title: "Digital Marketing Director",
@@ -171,7 +171,7 @@ const coursesData: Record<string, Course> = {
     students: 60,
     rating: 4.9,
     level: "Beginner to Intermediate",
-    price: "₹8,000",
+    price: "₹5,999",
     /*mentor: {
       name: "Alex Thompson",
       title: "Creative Director",
@@ -218,7 +218,7 @@ const coursesData: Record<string, Course> = {
     students: "45",
     rating: 4.7,
     level: "Basic to Advanced",
-    price: "₹8,000",
+    price: "₹6,499",
     /*mentor: {
       name: "David Kim",
       title: "Mobile App Architect",
@@ -313,12 +313,10 @@ const CourseDetail = () => {
                   <div className="text-3xl font-bold text-primary mb-2">{course.price}</div>
                   <div className="text-muted-foreground">{course.nextStart}</div>
                 </div>
-                <Button 
-                  size="lg" 
-                  className="mt-4 md:mt-0"
-                  onClick={() => window.open('https://forms.gle/j3KraGJDFjCKKTxr6', '_blank')}
-                >
-                  Enroll Now
+                <Button asChild size="lg" className="mt-4 md:mt-0">
+                  <Link to={`/register/${courseId}`}>
+                    Enroll Now
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -405,13 +403,10 @@ const CourseDetail = () => {
                 <p className="text-white/90 mb-6">
                   Join hundreds of students who have transformed their careers with this course.
                 </p>
-                <Button 
-                  size="lg" 
-                  variant="accent" 
-                  className="w-full"
-                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSdytBZUV0mkzN96Lx5tPSgkQnSfH8YnVNwuE1qHpq6UAVx2pQ/viewform', '_blank')}
-                >
-                  Enroll Now - {course.price}
+                <Button asChild size="lg" variant="accent" className="w-full">
+                  <Link to={`/register/${courseId}`}>
+                    Enroll Now - {course.price}
+                  </Link>
                 </Button>
                 <p className="text-sm text-white/80 mt-4 text-center">
                   30-day money-back guarantee

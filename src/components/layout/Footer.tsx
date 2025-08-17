@@ -70,7 +70,7 @@ const Footer = () => {
             <h3 className="font-semibold text-foreground mb-4">Our Courses</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/course/web-development" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/course/Py" className="text-muted-foreground hover:text-primary transition-colors">
                   Python Basics
                 </Link>
               </li>
