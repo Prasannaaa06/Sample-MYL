@@ -56,34 +56,55 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden transition-transform duration-200 hover:scale-110"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <div className={`transition-transform duration-300 ${
+              isMenuOpen ? 'rotate-90' : 'rotate-0'
+            }`}>
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </div>
           </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-card rounded-lg mt-2 shadow-card">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 text-base font-medium rounded-md transition-colors ${
-                    isActive(item.path)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg mt-2 shadow-lg border border-blue-200 backdrop-blur-sm">
+            {navItems.map((item, index) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 transform hover:scale-105 ${
+                  isActive(item.path)
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-white/70"
+                }`}
+                style={{
+                  animationDelay: `${index * 50}ms`,
+                  animation: isMenuOpen ? 'slideInLeft 0.3s ease-out forwards' : 'none'
+                }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
-        )}
+        </div>
+        
+        <style jsx>{`
+          @keyframes slideInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+        `}</style>
       </div>
     </header>
   );

@@ -104,10 +104,10 @@ const Footer = () => {
             © {currentYear} MYL ACADEMY. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
               Privacy Policy
             </Link>
-            <Link to="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+            <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors text-sm">
               Terms of Service
             </Link>
           </div>

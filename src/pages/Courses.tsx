@@ -42,7 +42,6 @@ const courses = [
     students: 45,
     rating: 4.7,
   },
-  
 ];
 
 const Courses = () => {

@@ -186,7 +186,7 @@ const CourseRegistration = () => {
                   <form className="space-y-3 md:space-y-4">
                     <div>
                       <label className="block font-inter text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                        Full Name *
+                        Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -201,7 +201,7 @@ const CourseRegistration = () => {
 
                     <div>
                       <label className="block font-inter text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                        Email Address *
+                        Email Address <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
@@ -216,7 +216,7 @@ const CourseRegistration = () => {
 
                     <div>
                       <label className="block font-inter text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                        Phone Number *
+                        Phone Number <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="tel"
@@ -231,7 +231,7 @@ const CourseRegistration = () => {
 
                     <div>
                       <label className="block font-inter text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                        Preferred Batch Month *
+                        Preferred Batch Month <span className="text-red-500">*</span>
                       </label>
                       <select
                         name="batch"

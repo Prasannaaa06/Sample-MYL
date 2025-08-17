@@ -12,6 +12,8 @@ import Contact from "./pages/Contact";
 import CourseDetail from "./pages/CourseDetail";
 import CourseRegistration from "./pages/CourseRegistration";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/register/:courseId" element={<CourseRegistration />} />
           <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

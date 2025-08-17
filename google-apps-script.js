@@ -10,7 +10,7 @@ function doPost(e) {
     const data = JSON.parse(e.postData.contents);
     
     // Open your Google Sheet (replace with your sheet ID)
-    const sheet = SpreadsheetApp.openById('1FJ4P559VXhEhgdMh0lXLNYQeREeRVcrcqscV9t-P9r0').getActiveSheet();
+    const sheet = SpreadsheetApp.openById('https://docs.google.com/spreadsheets/d/1FJ4P559VXhEhgdMh0lXLNYQeREeRVcrcqscV9t-P9r0/edit?usp=sharing').getActiveSheet();
     
     // Add headers if sheet is empty
     if (sheet.getLastRow() === 0) {
